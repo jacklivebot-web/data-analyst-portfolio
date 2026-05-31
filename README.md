@@ -88,18 +88,41 @@
 
 ## 🚀 Как запустить
 
+### ⚡ Быстрый старт — автоотчёт
+Закинь CSV — получи PDF + дашборд. Автоматически:
+
+```bash
+# Воронка e-commerce
+python auto_report.py --input data.csv --type funnel --output-dir reports/
+
+# A/B тест
+python auto_report.py --input data.csv --type ab_test --output-dir reports/
+
+# Прогноз оттока
+python auto_report.py --input data.csv --type churn --output-dir reports/
+
+# RFM-сегментация
+python auto_report.py --input data.csv --type rfm --output-dir reports/
+```
+
+**Результат:** `reports/dashboard_TYPE.png` + `.html` + `auto_report_TYPE_TIMESTAMP.pdf`
+
+### 📊 Полный запуск
 ```bash
 git clone https://github.com/jacklivebot-web/data-analyst-portfolio.git
 cd data-analyst-portfolio
-uv venv && uv pip install pandas numpy plotly
+uv venv && uv pip install pandas numpy plotly matplotlib
 
-# Отчёты (дашборды)
+# Автоотчёт (любые данные)
+python auto_report.py --input your_data.csv --type funnel --output-dir reports/
+
+# Или интерактивные дашборды
 open 01-ecommerce-funnel/dashboard.html
 open 02-ab-test-analysis/dashboard.html
 open 03-churn-prediction/dashboard.html
 open 04-retail-rfm-analysis/dashboard.html
 
-# Или Jupyter
+# Jupyter Notebook
 uv pip install jupyter
 uv run jupyter lab
 ```
@@ -120,7 +143,8 @@ uv run jupyter lab
 data-analyst-portfolio/
 ├── README.md                          ← Вы здесь
 ├── HUMAN_AI_HOW_IT_WORKS.md           # Архитектура Human+AI
-├── dashboards.py                        # Генератор дашбордов
+├── auto_report.py                     🤖 CSV → PDF + дашборд (автоматика)
+├── dashboards.py                        # Генератор интерактивных HTML
 │
 ├── 01-ecommerce-funnel/
 │   ├── dashboard.html                   🎯 Воронка + каналы + устройства
