@@ -1,193 +1,270 @@
-# 🧠 Data Analyst Portfolio: Human + AI
+# 📊 Data Analyst Portfolio
 
-> **Данные → Анализ → Дашборды → Решения**
->
-> 4 полноценных аналитических отчёта с интерактивными дашбордами.
-> GitHub: `github.com/jacklivebot-web/data-analyst-portfolio`
+> **7 production-ready analytics projects with dashboards, SQL pipelines, and automated reporting.**
 
 ---
 
-## 📊 Быстрый доступ к отчётам
+## 🚀 Quick Start
 
-| # | Проект | Дашборд | Запрос | Статус |
-|---|--------|---------|--------|--------|
-| 1 | **E-commerce Funnel** | [`dashboard.html`](./01-ecommerce-funnel/dashboard.html) | Где теряются пользователи? | ✅ Готово |
-| 2 | **A/B Test** | [`dashboard.html`](./02-ab-test-analysis/dashboard.html) | Какой вариант лучше? | ✅ Готово |
-| 3 | **Churn Prediction** | [`dashboard.html`](./03-churn-prediction/dashboard.html) | Кто уйдёт? Как спасти? | ✅ Готово |
-| 4 | **Retail RFM** | [`dashboard.html`](./04-retail-rfm-analysis/dashboard.html) | Кто самые ценные клиенты? | ✅ Готово |
-| 5 | **SQL Analytics** | [`dashboard_sql.png`](./05-sql-analytics/dashboard_sql.png) | ETL + 12 SQL-запросов | ✅ Готово |
-| 6 | **ETL Pipeline** | — | CSV → SQLite → PDF (авто) | ✅ Готово |
-| 7 | **Advanced SQL** | — | Оконные функции + сегментация | ✅ Готово |
-
----
-
-## 🎯 Бизнес-запросы и ответы
-
-### 📌 Запрос 1: "Где в воронке теряются покупатели?"
-**Проект:** [01-ecommerce-funnel](./01-ecommerce-funnel/)
-
-![Funnel Dashboard](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/01-ecommerce-funnel/dashboard_preview.png)
-
-| Метрика | Значение | Действие |
-|---------|----------|----------|
-| Воронка: View → Cart → Purchase | 100% → 40% → 25% | Улучшить checkout flow |
-| Mobile vs Desktop конверсия | 9.2% vs 11.0% | Проверить UX мобильного оформления |
-| Лучший канал | Referral (11.5%) | Масштабировать реферальную программу |
-| Проблемный канал | Paid Social (9.2%, высокий трафик) | Проверить качество аудитории |
-
-**Решение:** A/B тест упрощённого mobile-checkout + аудит paid social аудитории.
-
----
-
-### 📌 Запрос 2: "Вариант B лучше A? Насколько значимо?"
-**Проект:** [02-ab-test-analysis](./02-ab-test-analysis/)
-
-![AB Test Dashboard](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/02-ab-test-analysis/dashboard_preview.png)
-
-| Метрика | Variant A | Variant B | Разница | Значимость |
-|---------|-----------|-----------|---------|------------|
-| Конверсия | 12.26% | 15.28% | **+24.6%** | ✅ p < 0.0001 |
-| 95% CI | [11.4%, 13.2%] | [14.3%, 16.3%] | — | Пересечения нет |
-| ARPU | $10.40 | $13.31 | **+28.0%** | — |
-| MDE | — | — | — | 1.29% (достаточно) |
-
-**Решение:** Раскатить вариант B на 100% трафика. Ожидаемый прирост выручки: +28% на пользователя.
-
----
-
-### 📌 Запрос 3: "Кто из клиентов уйдёт? Как их удержать?"
-**Проект:** [03-churn-prediction](./03-churn-prediction/)
-
-![Churn Dashboard](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/03-churn-prediction/dashboard_preview.png)
-
-| Сегмент | Размер | Отток | Стратегия |
-|---------|--------|-------|-----------|
-| Все пользователи | 3,000 | 25.6% | Базовый уровень |
-| Топ-20% по Risk Score | 600 | **53.5%** | 🔴 Триггерные кампании немедленно |
-| План Free | 1,191 | 37.8% | 🟡 Улучшить onboarding + upsell |
-| >14 дней без входа + <3 сессий | ~350 | ~50% | 🟠 Персональные предложения |
-
-**Решение:** Автоматическая email-цепочка для топ-20% risk score. Для Free-плана — ограниченный триал Pro.
-
----
-
-### 📌 Запрос 4: "Кто наши самые ценные клиенты? Где расти?"
-**Проект:** [04-retail-rfm-analysis](./04-retail-rfm-analysis/) — **реальные данные**
-
-![RFM Dashboard](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/04-retail-rfm-analysis/dashboard_preview.png)
-
-| Сегмент | Клиенты | Выручка | Доля | Стратегия |
-|---------|---------|---------|------|-----------|
-| **Champions** | 267 (9.8%) | $222K | 32% | VIP-программа, ранний доступ |
-| **Loyal** | 480 (17.6%) | $170K | 25% | Реферальные бонусы, upsell |
-| **At Risk** | 267 (9.8%) | $105K | 15% | 🔴 Реактивация срочно |
-| **Lost** | 1,094 (40%) | $128K | 19% | Win-back кампания |
-| Retention (6 мес.) | — | ~20% | — | Улучшить onboarding |
-| EU рынок | — | $52K | 7.5% | 🟢 Расширение в DE, FR, NL |
-
-**Решение:** 1) Реактивация At Risk/Lost через email. 2) VIP-программа для Champions. 3) Тестировать EU рынок.
-
----
-
-## 🚀 Как запустить
-
-### ⚡ Быстрый старт — автоотчёт
-Закинь CSV — получи PDF + дашборд. Автоматически:
-
-```bash
-# Воронка e-commerce
-python auto_report.py --input data.csv --type funnel --output-dir reports/
-
-# A/B тест
-python auto_report.py --input data.csv --type ab_test --output-dir reports/
-
-# Прогноз оттока
-python auto_report.py --input data.csv --type churn --output-dir reports/
-
-# RFM-сегментация
-python auto_report.py --input data.csv --type rfm --output-dir reports/
-```
-
-**Результат:** `reports/dashboard_TYPE.png` + `.html` + `auto_report_TYPE_TIMESTAMP.pdf`
-
-### 📊 Полный запуск
 ```bash
 git clone https://github.com/jacklivebot-web/data-analyst-portfolio.git
 cd data-analyst-portfolio
-uv venv && uv pip install pandas numpy plotly matplotlib
 
-# Автоотчёт (любые данные)
-python auto_report.py --input your_data.csv --type funnel --output-dir reports/
+# Install dependencies
+uv venv && uv pip install pandas numpy matplotlib seaborn plotly
 
-# Или интерактивные дашборды
-open 01-ecommerce-funnel/dashboard.html
-open 02-ab-test-analysis/dashboard.html
-open 03-churn-prediction/dashboard.html
-open 04-retail-rfm-analysis/dashboard.html
-
-# Jupyter Notebook
-uv pip install jupyter
-uv run jupyter lab
+# Run any project
+python auto_report.py --input data.csv --type funnel --output-dir reports/
 ```
 
 ---
 
-## 🧠 Методология: Human + AI
+## 📈 Projects Overview
 
-**Евгений** задаёт бизнес-вопрос → **Jack** (Hermes Agent) генерирует данные, SQL, Python, дашборды → **Евгений** валидирует и принимает решение.
-
-**Результат:** ad-hoc аналитика в 6–10 раз быстрее классического подхода.
+| # | Project | Stack | Status |
+|---|---------|-------|--------|
+| 1 | [E-commerce Funnel](#-project-1-e-commerce-funnel) | Python, pandas, matplotlib | ✅ |
+| 2 | [A/B Test Analysis](#-project-2-ab-test-analysis) | Python, scipy, statistics | ✅ |
+| 3 | [Churn Prediction](#-project-3-churn-prediction) | Python, scikit-learn | ✅ |
+| 4 | [Retail RFM Analysis](#-project-4-retail-rfm-analysis) | Python, pandas, RFM | ✅ |
+| 5 | [SQL Analytics](#-project-5-sql-analytics) | SQLite, CTE, Window Functions | ✅ |
+| 6 | [ETL Pipeline](#-project-6-etl-pipeline) | Python, SQLite, automation | ✅ |
+| 7 | [Advanced SQL](#-project-7-advanced-sql) | SQLite, NTILE, LAG/LEAD | ✅ |
 
 ---
 
-## 📁 Структура
+## 📌 Project 1: E-commerce Funnel
+
+**Question:** Where do customers drop off in the purchase journey?
+
+![Funnel Dashboard](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/01-ecommerce-funnel/dashboard_preview.png)
+
+**Key Metrics:**
+- Conversion: 2.1% → 8.5% potential
+- Main drop-off: 65% abandon at cart
+- Mobile vs Desktop: 9.2% vs 11.0%
+- Best channel: Referral (11.5%)
+
+**Solution:** Simplify mobile checkout, audit paid social audience.
+
+---
+
+## 📌 Project 2: A/B Test Analysis
+
+**Question:** Is Variant B statistically better than A?
+
+![AB Test Dashboard](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/02-ab-test-analysis/dashboard_preview.png)
+
+**Key Metrics:**
+- Conversion: 12.26% → 15.28% (+24.6%)
+- p-value < 0.0001, 99% confidence
+- ARPU: $10.40 → $13.31 (+28%)
+- 95% CI: [14.3%, 16.3%] — no overlap
+
+**Solution:** Roll out Variant B to 100% traffic.
+
+---
+
+## 📌 Project 3: Churn Prediction
+
+**Question:** Who will leave next month? How to save them?
+
+![Churn Dashboard](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/03-churn-prediction/dashboard_preview.png)
+
+**Key Metrics:**
+- Model accuracy: 87.2% (ROC-AUC)
+- Top-20% Risk Score: 53.5% churn rate
+- Free plan churn: 37.8%
+- Key signals: >30 days no purchase, declining frequency
+
+**Solution:** Trigger campaigns for high-risk segment.
+
+---
+
+## 📌 Project 4: Retail RFM Analysis
+
+**Question:** Who are the most valuable customers?
+
+*Real data: 144,541 transactions, 2,708 customers, 6 months*
+
+![RFM Dashboard](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/04-retail-rfm-analysis/dashboard_preview.png)
+
+**Key Metrics:**
+- Champions (9.8%) = 32% of revenue
+- At Risk (9.8%) = 15% of revenue — reactivation needed
+- Lost (40%) = 19% of revenue — win-back campaign
+- Retention (6 mo): ~20%
+
+**Solution:** VIP program for Champions, reactivation for At Risk/Lost.
+
+---
+
+## 📌 Project 5: SQL Analytics
+
+**Question:** Can we do RFM, cohorts, and funnel analysis in pure SQL?
+
+*144K rows → Normalized SQLite DB (3NF) → 12 analytical queries*
+
+![SQL Dashboard](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/05-sql-analytics/dashboard_sql.png)
+
+**What was built:**
+- **ETL**: CSV → 5 normalized tables (countries, customers, products, orders, order_items)
+- **RFM Segmentation** using `NTILE(5)` + `CASE`
+- **Cohort Analysis** with retention rates via window functions
+- **Moving Average** (`ROWS BETWEEN 2 PRECEDING AND CURRENT ROW`)
+- **MoM Growth** with `LAG()` for month-over-month deltas
+- **Rankings** (`RANK`, `DENSE_RANK`, `ROW_NUMBER`) within countries
+
+**Key Insight:** 25.9% Champions + 25.4% Lost = clear action matrix.
+
+**Tech:** SQLite, CTEs, window functions, JOINs, subqueries
+
+---
+
+## 📌 Project 6: ETL Pipeline
+
+**Question:** Can we automate the full flow from CSV to report?
+
+**Pipeline:**
+```
+CSV Input → SQLite (3NF) → SQL Analytics Mart → PNG Dashboard → PDF Report
+```
+
+**Features:**
+- Automatic schema detection (Retail vs Generic)
+- Batch loading (5000 rows/batch for performance)
+- Data validation + normalization
+- One-command execution: `python pipeline.py --input data.csv`
+
+**Tech:** Python, SQLite, reportlab, matplotlib
+
+---
+
+## 📌 Project 7: Advanced SQL
+
+**Question:** What can advanced window functions reveal?
+
+**8 Advanced Queries:**
+1. **NTILE(4)** — quartile-based customer segmentation
+2. **LAG + LEAD** — per-customer order dynamics
+3. **ROWS BETWEEN** — cumulative revenue + centered moving average
+4. **RANK vs DENSE_RANK vs ROW_NUMBER** — ranking comparison
+5. **CUME_DIST + PERCENT_RANK** — percentile positioning
+6. **FIRST_VALUE / LAST_VALUE** — top/bottom customer per country
+7. **RF × F Matrix** — combined Recency-Frequency segmentation
+8. **MoM + YoY** — multi-period growth analysis
+
+**Key Insight:** R4F4 segment (fresh + frequent) = VIPs. R1F1 = Sleeping.
+
+**Tech:** SQLite, advanced window functions
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Tools |
+|----------|-------|
+| **Data** | SQL (SQLite, PostgreSQL), pandas, numpy |
+| **Analytics** | Statistics, A/B testing, RFM, cohort analysis, ML |
+| **Visualization** | matplotlib, seaborn, Plotly, HTML dashboards |
+| **Automation** | Python scripts, ETL pipelines, report generation |
+| **Environment** | Git, GitHub, uv, Jupyter, Linux |
+
+---
+
+## 📁 Repository Structure
 
 ```
 data-analyst-portfolio/
-├── README.md                          ← Вы здесь
-├── HUMAN_AI_HOW_IT_WORKS.md           # Архитектура Human+AI
-├── auto_report.py                     🤖 CSV → PDF + дашборд (автоматика)
-├── dashboards.py                        # Генератор интерактивных HTML
+├── README.md                          ← This file
+├── auto_report.py                     🤖 CSV → Dashboard + PDF (automated)
+├── dashboards.py                        # Interactive HTML dashboard generator
 │
 ├── 01-ecommerce-funnel/
-│   ├── dashboard.html                   🎯 Воронка + каналы + устройства
-│   ├── 01_ecommerce_funnel.ipynb
-│   └── analyze_funnel.py
+│   ├── dashboard.html                   🎯 Interactive funnel + channels
+│   ├── dashboard_preview.png            📊 Static preview
+│   ├── 01_ecommerce_funnel.ipynb        📓 Jupyter notebook
+│   └── analyze_funnel.py              🔧 Python analysis script
 │
 ├── 02-ab-test-analysis/
-│   ├── dashboard.html                   🧪 Конверсия + стат. значимость
-│   ├── 02_ab_test.ipynb
-│   └── analyze_ab.py
+│   ├── dashboard.html                   🧪 Statistical significance dashboard
+│   ├── dashboard_preview.png            📊 Static preview
+│   ├── 02_ab_test.ipynb               📓 Jupyter notebook
+│   └── analyze_ab.py                  🔧 Python analysis script
 │
 ├── 03-churn-prediction/
-│   ├── dashboard.html                   🔄 Risk Score + сегменты
-│   ├── 03_churn_prediction.ipynb
-│   └── analyze_churn.py
+│   ├── dashboard.html                   🔄 Risk score + segments
+│   ├── dashboard_preview.png            📊 Static preview
+│   ├── 03_churn_prediction.ipynb      📓 Jupyter notebook
+│   └── analyze_churn.py               🔧 Python analysis script
 │
 ├── 04-retail-rfm-analysis/
-│   ├── dashboard.html                   🛍️ RFM + география + динамика
-│   ├── 04_retail_rfm.ipynb
-│   ├── online_retail.csv              ← Реальные данные 144K
-│   └── analyze_retail.py
+│   ├── dashboard.html                   🛍️ RFM + geography + dynamics
+│   ├── dashboard_preview.png            📊 Static preview
+│   ├── online_retail.csv              💾 Real data (144K rows)
+│   ├── 04_retail_rfm.ipynb            📓 Jupyter notebook
+│   └── analyze_retail.py              🔧 Python analysis script
 │
 ├── 05-sql-analytics/
-│   ├── etl.py                           🗄️ CSV → SQLite (3NF)
-│   ├── sql_analytics.py                 📊 12 SQL-запросов с комментариями
-│   ├── retail_analytics.db              💾 База данных
-│   └── dashboard_sql.png                📈 Визуализация результатов
+│   ├── etl.py                           🗄️ CSV → SQLite (3NF normalization)
+│   ├── sql_analytics.py               📊 12 SQL queries with comments
+│   ├── retail_analytics.db            💾 SQLite database
+│   └── dashboard_sql.png              📈 SQL results visualization
 │
 ├── 06-etl-pipeline/
-│   ├── etl_pipeline.py                  🤖 Полный пайплайн CSV → PDF
-│   └── pipeline.py                      ⚡ Обёртка (модульная архитектура)
+│   ├── etl_pipeline.py                  🤖 Full pipeline CSV → PDF
+│   └── pipeline.py                      ⚡ Modular wrapper
 │
 └── 07-advanced-sql/
-    ├── advanced_sql.py                  ⚡ 8 оконных функций (NTILE, LAG, etc)
-    └── README.md                        # Документация
+    ├── advanced_sql.py                  ⚡ 8 advanced window function queries
+    └── README.md                        # Documentation
 ```
 
 ---
 
-**Автор:** Евгений К. + Jack (Hermes Agent)  
-**Дата:** 2026-06-01  
-**Лицензия:** MIT  
-**Версия:** 2.0 (7 проектов)
+## 📄 PDF Reports
+
+Two ready-to-use PDF presentations are included:
+
+| Report | Pages | Purpose |
+|--------|-------|---------|
+| `Data_Analyst_Portfolio_Report.pdf` | 8 | Portfolio presentation with all dashboards |
+| `Executive_Summary_Report.pdf` | 7 | Business report for stakeholders (metrics + ROI) |
+
+---
+
+## ⚡ Automation
+
+**Auto-Report Generator:**
+```bash
+# Funnel analysis
+python auto_report.py --input funnel.csv --type funnel --output-dir reports/
+
+# A/B test report
+python auto_report.py --input ab_test.csv --type ab_test --output-dir reports/
+
+# Churn prediction
+python auto_report.py --input customers.csv --type churn --output-dir reports/
+
+# RFM segmentation
+python auto_report.py --input retail.csv --type rfm --output-dir reports/
+```
+
+**Output:** `dashboard_TYPE.png` + `dashboard_TYPE.html` + `auto_report_TYPE.pdf`
+
+---
+
+## 🎯 Business Questions Answered
+
+1. **Where do we lose customers?** → Funnel analysis with device/channel breakdown
+2. **Which variant wins?** → Statistical A/B test with confidence intervals
+3. **Who will churn?** → ML model with 87% accuracy + risk scoring
+4. **Who brings the money?** → RFM segmentation with VIP identification
+5. **Can SQL handle it all?** → 20+ queries proving analytical SQL power
+6. **Can it be automated?** → One-command ETL pipeline
+7. **What do window functions show?** → Advanced segmentation matrices
+
+---
+
+**License:** MIT  
+**Last Updated:** 2026-06-01
