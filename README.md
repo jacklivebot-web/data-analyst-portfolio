@@ -13,6 +13,7 @@
 | **01-ecommerce-funnel** | Воронка продаж, конверсия по каналам и устройствам | SQL, Python, EDA | `funnel_events.csv` + `analyze_funnel.py` |
 | **02-ab-test-analysis** | Статистический анализ A/B теста (z-test, CI, MDE) | Статистика, Python, SQL | `ab_test_results.csv` + `analyze_ab.py` |
 | **03-churn-prediction** | Прогнозирование оттока, risk score, сегментация | Python, EDA, бизнес-интерпретация | `churn_dataset.csv` + `analyze_churn.py` |
+| **04-retail-rfm-analysis** | RFM-сегментация + когортный анализ реальных продаж | RFM, Cohort Analysis, Python | `online_retail.csv` + `analyze_retail.py` |
 
 ---
 
@@ -59,10 +60,11 @@ python3 03-churn-prediction/analyze_churn.py
 - ARPU прирост: +28.0%
 - Рекомендация: раскатать B на 100% трафика
 
-### Churn
-- Базовый отток: 25.6%
-- Топ-20% по risk score: 53.5% оттока (точность в 2.1x выше)
-- Главный фактор: план `free` + <3 сессий + >14 дней без входа
+### RFM + Когортный анализ (реальные данные)
+- **Champions** (9.8% клиентов) приносят 32% выручки
+- **Lost** (40%) — резерв для реактивации, $650K выручки
+- **Retention** падает к 6 мес. до ~20%
+- **EU рынок** недооценён: Германия, Франция, Нидерланды
 
 ---
 
