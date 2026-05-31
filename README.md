@@ -23,6 +23,8 @@
 ### 📌 Запрос 1: "Где в воронке теряются покупатели?"
 **Проект:** [01-ecommerce-funnel](./01-ecommerce-funnel/)
 
+![Funnel Dashboard](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/01-ecommerce-funnel/dashboard_preview.png)
+
 | Метрика | Значение | Действие |
 |---------|----------|----------|
 | Воронка: View → Cart → Purchase | 100% → 40% → 25% | Улучшить checkout flow |
@@ -36,6 +38,8 @@
 
 ### 📌 Запрос 2: "Вариант B лучше A? Насколько значимо?"
 **Проект:** [02-ab-test-analysis](./02-ab-test-analysis/)
+
+![AB Test Dashboard](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/02-ab-test-analysis/dashboard_preview.png)
 
 | Метрика | Variant A | Variant B | Разница | Значимость |
 |---------|-----------|-----------|---------|------------|
@@ -51,6 +55,8 @@
 ### 📌 Запрос 3: "Кто из клиентов уйдёт? Как их удержать?"
 **Проект:** [03-churn-prediction](./03-churn-prediction/)
 
+![Churn Dashboard](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/03-churn-prediction/dashboard_preview.png)
+
 | Сегмент | Размер | Отток | Стратегия |
 |---------|--------|-------|-----------|
 | Все пользователи | 3,000 | 25.6% | Базовый уровень |
@@ -64,6 +70,8 @@
 
 ### 📌 Запрос 4: "Кто наши самые ценные клиенты? Где расти?"
 **Проект:** [04-retail-rfm-analysis](./04-retail-rfm-analysis/) — **реальные данные**
+
+![RFM Dashboard](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/04-retail-rfm-analysis/dashboard_preview.png)
 
 | Сегмент | Клиенты | Выручка | Доля | Стратегия |
 |---------|---------|---------|------|-----------|
