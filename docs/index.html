@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио Data Analyst — 7 проектов</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #ffffff;
+            color: #1f2937;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #ffffff 0%, #ecfdf5 50%, #ffffff 100%);
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2310b981' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .hero-content { position: relative; z-index: 1; }
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: #059669;
+            margin-bottom: 1.5rem;
+            animation: fadeInDown 0.8s ease;
+        }
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1f2937 0%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+        .subtitle {
+            font-size: 1.3rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1.2s ease;
+        }
+        .stats {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin: 2rem 0;
+            animation: fadeInUp 1.4s ease;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #059669;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            animation: fadeInUp 1.6s ease;
+        }
+        .btn {
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-primary {
+            background: #059669;
+            color: white;
+            border: none;
+        }
+        .btn-primary:hover {
+            background: #047857;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(5, 150, 105, 0.3);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: #6b7280;
+            border: 1px solid #d1d5db;
+        }
+        .btn-secondary:hover {
+            border-color: #059669;
+            color: #059669;
+        }
+        .projects {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #f9fafb;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #1f2937;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        .project-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #10b981;
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.1);
+        }
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .project-content {
+            padding: 1.5rem;
+        }
+        .project-number {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background: #059669;
+            border-radius: 6px;
+            text-align: center;
+            line-height: 28px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.8rem;
+        }
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+        }
+        .project-desc {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .tag {
+            padding: 0.3rem 0.8rem;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            color: #059669;
+        }
+        .tech-stack {
+            padding: 4rem 2rem;
+            background: #ffffff;
+            text-align: center;
+        }
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+        .tech-item {
+            padding: 1rem;
+            background: #f9fafb;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .tech-item:hover {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.05);
+        }
+        .tech-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .tech-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #374151;
+        }
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: #6b7280;
+            border-top: 1px solid #e5e7eb;
+            background: #ffffff;
+        }
+        .footer a {
+            color: #059669;
+            text-decoration: none;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        .scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            color: #059669;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .stats { flex-direction: column; gap: 1rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .cta-group { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">📊 Data Analyst Portfolio</div>
+            <h1>7 production-ready<br>аналитических проектов</h1>
+            <p class="subtitle">
+                Воронки, A/B-тесты, прогноз оттока, RFM-сегментация, SQL-аналитика, ETL-пайплайны, оконные функции
+            </p>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Проектов</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">SQL-запросов</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">144K</div>
+                    <div class="stat-label">Строк данных</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Воспроизводимо</div>
+                </div>
+            </div>
+            <div class="cta-group">
+                <a href="https://github.com/jacklivebot-web/data-analyst-portfolio" class="btn btn-primary" target="_blank">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub
+                </a>
+                <a href="https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/Data_Analyst_Portfolio_Report.pdf" class="btn btn-secondary" target="_blank">
+                    📄 Скачать PDF
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </div>
+    </section>
+
+    <section class="projects">
+        <h2 class="section-title">📈 Проекты</h2>
+        <div class="projects-grid">
+            <a href="https://github.com/jacklivebot-web/data-analyst-portfolio/tree/master/01-ecommerce-funnel" class="project-card" target="_blank">
+                <img src="https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/01-ecommerce-funnel/dashboard_preview.png" alt="Funnel" class="project-image">
+                <div class="project-content">
+                    <div class="project-number">1</div>
+                    <h3 class="project-title">Воронка e-commerce</h3>
+                    <p class="project-desc">Где теряются покупатели? Конверсия, каналы, устройства.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">pandas</span>
+                        <span class="tag">matplotlib</span>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/jacklivebot-web/data-analyst-portfolio/tree/master/02-ab-test-analysis" class="project-card" target="_blank">
+                <img src="https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/02-ab-test-analysis/dashboard_preview.png" alt="AB Test" class="project-image">
+                <div class="project-content">
+                    <div class="project-number">2</div>
+                    <h3 class="project-title">A/B-тестирование</h3>
+                    <p class="project-desc">Статистическая значимость, p-value, доверительные интервалы.</p>
+                    <div class="project-tags">
+                        <span class="tag">scipy</span>
+                        <span class="tag">статистика</span>
+                        <span class="tag">гипотезы</span>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/jacklivebot-web/data-analyst-portfolio/tree/master/03-churn-prediction" class="project-card" target="_blank">
+                <img src="https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/03-churn-prediction/dashboard_preview.png" alt="Churn" class="project-image">
+                <div class="project-content">
+                    <div class="project-number">3</div>
+                    <h3 class="project-title">Прогноз оттока</h3>
+                    <p class="project-desc">ML-модель с 87% точностью. Risk Score + сегментация.</p>
+                    <div class="project-tags">
+                        <span class="tag">scikit-learn</span>
+                        <span class="tag">ML</span>
+                        <span class="tag">классификация</span>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/jacklivebot-web/data-analyst-portfolio/tree/master/04-retail-rfm-analysis" class="project-card" target="_blank">
+                <img src="https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/04-retail-rfm-analysis/dashboard_preview.png" alt="RFM" class="project-image">
+                <div class="project-content">
+                    <div class="project-number">4</div>
+                    <h3 class="project-title">RFM-сегментация</h3>
+                    <p class="project-desc">Реальные данные: 144K транзакций. Champions, At Risk, Lost.</p>
+                    <div class="project-tags">
+                        <span class="tag">pandas</span>
+                        <span class="tag">RFM</span>
+                        <span class="tag">реальные данные</span>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/jacklivebot-web/data-analyst-portfolio/tree/master/05-sql-analytics" class="project-card" target="_blank">
+                <img src="https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/05-sql-analytics/dashboard_sql.png" alt="SQL" class="project-image">
+                <div class="project-content">
+                    <div class="project-number">5</div>
+                    <h3 class="project-title">SQL-аналитика</h3>
+                    <p class="project-desc">ETL + 12 запросов. CTE, NTILE, оконные функции, JOIN.</p>
+                    <div class="project-tags">
+                        <span class="tag">SQLite</span>
+                        <span class="tag">CTE</span>
+                        <span class="tag">оконные функции</span>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/jacklivebot-web/data-analyst-portfolio/tree/master/06-etl-pipeline" class="project-card" target="_blank">
+                <div class="project-content" style="padding-top: 2rem;">
+                    <div class="project-number">6</div>
+                    <h3 class="project-title">ETL-пайплайн</h3>
+                    <p class="project-desc">Автоматизация: CSV → SQLite → витрина → PDF. Одна команда.</p>
+                    <div class="project-tags">
+                        <span class="tag">ETL</span>
+                        <span class="tag">автоматизация</span>
+                        <span class="tag">pipeline</span>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/jacklivebot-web/data-analyst-portfolio/tree/master/07-advanced-sql" class="project-card" target="_blank">
+                <div class="project-content" style="padding-top: 2rem;">
+                    <div class="project-number">7</div>
+                    <h3 class="project-title">Продвинутый SQL</h3>
+                    <p class="project-desc">8 запросов: LAG, LEAD, CUME_DIST, FIRST_VALUE, матрица R×F.</p>
+                    <div class="project-tags">
+                        <span class="tag">NTILE</span>
+                        <span class="tag">LAG/LEAD</span>
+                        <span class="tag">сегментация</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="tech-stack">
+        <h2 class="section-title">🛠️ Технологический стек</h2>
+        <div class="tech-grid">
+            <div class="tech-item"><div class="tech-icon">🐍</div><div class="tech-name">Python</div></div>
+            <div class="tech-item"><div class="tech-icon">📊</div><div class="tech-name">pandas</div></div>
+            <div class="tech-item"><div class="tech-icon">🔢</div><div class="tech-name">numpy</div></div>
+            <div class="tech-item"><div class="tech-icon">📈</div><div class="tech-name">matplotlib</div></div>
+            <div class="tech-item"><div class="tech-icon">🗄️</div><div class="tech-name">SQLite</div></div>
+            <div class="tech-item"><div class="tech-icon">🧠</div><div class="tech-name">scikit-learn</div></div>
+            <div class="tech-item"><div class="tech-icon">📉</div><div class="tech-name">scipy</div></div>
+            <div class="tech-item"><div class="tech-icon">📑</div><div class="tech-name">Jupyter</div></div>
+            <div class="tech-item"><div class="tech-icon">🔄</div><div class="tech-name">Git</div></div>
+            <div class="tech-item"><div class="tech-icon">🐧</div><div class="tech-name">Linux</div></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>📄 <a href="https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/Data_Analyst_Portfolio_Report.pdf" target="_blank">PDF-портфолио</a> | 
+        📋 <a href="https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/Executive_Summary_Report.pdf" target="_blank">Executive Summary</a></p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">Последнее обновление: июнь 2026</p>
+    </footer>
+</body>
+</html>
