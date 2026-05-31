@@ -1,270 +1,270 @@
-# 📊 Data Analyst Portfolio
+# 📊 Портфолио Data Analyst
 
-> **7 production-ready analytics projects with dashboards, SQL pipelines, and automated reporting.**
+> **7 production-ready проектов с дашбордами, SQL-пайплайнами и автоматической отчётностью.**
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Быстрый старт
 
 ```bash
 git clone https://github.com/jacklivebot-web/data-analyst-portfolio.git
 cd data-analyst-portfolio
 
-# Install dependencies
+# Установка зависимостей
 uv venv && uv pip install pandas numpy matplotlib seaborn plotly
 
-# Run any project
+# Запуск любого проекта
 python auto_report.py --input data.csv --type funnel --output-dir reports/
 ```
 
 ---
 
-## 📈 Projects Overview
+## 📈 Обзор проектов
 
-| # | Project | Stack | Status |
-|---|---------|-------|--------|
-| 1 | [E-commerce Funnel](#-project-1-e-commerce-funnel) | Python, pandas, matplotlib | ✅ |
-| 2 | [A/B Test Analysis](#-project-2-ab-test-analysis) | Python, scipy, statistics | ✅ |
-| 3 | [Churn Prediction](#-project-3-churn-prediction) | Python, scikit-learn | ✅ |
-| 4 | [Retail RFM Analysis](#-project-4-retail-rfm-analysis) | Python, pandas, RFM | ✅ |
-| 5 | [SQL Analytics](#-project-5-sql-analytics) | SQLite, CTE, Window Functions | ✅ |
-| 6 | [ETL Pipeline](#-project-6-etl-pipeline) | Python, SQLite, automation | ✅ |
-| 7 | [Advanced SQL](#-project-7-advanced-sql) | SQLite, NTILE, LAG/LEAD | ✅ |
+| # | Проект | Стек | Статус |
+|---|--------|------|--------|
+| 1 | [Воронка e-commerce](#-проект-1-воронка-e-commerce) | Python, pandas, matplotlib | ✅ |
+| 2 | [A/B-тестирование](#-проект-2-ab-тестирование) | Python, scipy, статистика | ✅ |
+| 3 | [Прогноз оттока](#-проект-3-прогноз-оттока) | Python, scikit-learn | ✅ |
+| 4 | [RFM-сегментация](#-проект-4-rfm-сегментация) | Python, pandas, RFM | ✅ |
+| 5 | [SQL-аналитика](#-проект-5-sql-аналитика) | SQLite, CTE, оконные функции | ✅ |
+| 6 | [ETL-пайплайн](#-проект-6-etl-пайплайн) | Python, SQLite, автоматизация | ✅ |
+| 7 | [Продвинутый SQL](#-проект-7-продвинутый-sql) | SQLite, NTILE, LAG/LEAD | ✅ |
 
 ---
 
-## 📌 Project 1: E-commerce Funnel
+## 📌 Проект 1: Воронка e-commerce
 
-**Question:** Where do customers drop off in the purchase journey?
+**Вопрос:** Где теряются покупатели на пути к заказу?
 
-![Funnel Dashboard](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/01-ecommerce-funnel/dashboard_preview.png)
+![Дашборд воронки](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/01-ecommerce-funnel/dashboard_preview.png)
 
-**Key Metrics:**
-- Conversion: 2.1% → 8.5% potential
-- Main drop-off: 65% abandon at cart
+**Ключевые метрики:**
+- Конверсия: 2.1% → потенциал 8.5%
+- Главная потеря: 65% уходят после корзины
 - Mobile vs Desktop: 9.2% vs 11.0%
-- Best channel: Referral (11.5%)
+- Лучший канал: Referral (11.5%)
 
-**Solution:** Simplify mobile checkout, audit paid social audience.
+**Решение:** Упростить mobile-checkout, проверить аудиторию paid social.
 
 ---
 
-## 📌 Project 2: A/B Test Analysis
+## 📌 Проект 2: A/B-тестирование
 
-**Question:** Is Variant B statistically better than A?
+**Вопрос:** Вариант B статистически лучше A?
 
-![AB Test Dashboard](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/02-ab-test-analysis/dashboard_preview.png)
+![Дашборд A/B](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/02-ab-test-analysis/dashboard_preview.png)
 
-**Key Metrics:**
-- Conversion: 12.26% → 15.28% (+24.6%)
-- p-value < 0.0001, 99% confidence
+**Ключевые метрики:**
+- Конверсия: 12.26% → 15.28% (+24.6%)
+- p-value < 0.0001, доверие 99%
 - ARPU: $10.40 → $13.31 (+28%)
-- 95% CI: [14.3%, 16.3%] — no overlap
+- 95% CI: [14.3%, 16.3%] — пересечений нет
 
-**Solution:** Roll out Variant B to 100% traffic.
-
----
-
-## 📌 Project 3: Churn Prediction
-
-**Question:** Who will leave next month? How to save them?
-
-![Churn Dashboard](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/03-churn-prediction/dashboard_preview.png)
-
-**Key Metrics:**
-- Model accuracy: 87.2% (ROC-AUC)
-- Top-20% Risk Score: 53.5% churn rate
-- Free plan churn: 37.8%
-- Key signals: >30 days no purchase, declining frequency
-
-**Solution:** Trigger campaigns for high-risk segment.
+**Решение:** Раскатить вариант B на 100% трафика.
 
 ---
 
-## 📌 Project 4: Retail RFM Analysis
+## 📌 Проект 3: Прогноз оттока
 
-**Question:** Who are the most valuable customers?
+**Вопрос:** Кто уйдёт в следующем месяце? Как их удержать?
 
-*Real data: 144,541 transactions, 2,708 customers, 6 months*
+![Дашборд оттока](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/03-churn-prediction/dashboard_preview.png)
 
-![RFM Dashboard](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/04-retail-rfm-analysis/dashboard_preview.png)
+**Ключевые метрики:**
+- Точность модели: 87.2% (ROC-AUC)
+- Топ-20% по Risk Score: 53.5% отток
+- Отток Free-плана: 37.8%
+- Ключевые сигналы: >30 дней без покупки, снижение частоты
 
-**Key Metrics:**
-- Champions (9.8%) = 32% of revenue
-- At Risk (9.8%) = 15% of revenue — reactivation needed
-- Lost (40%) = 19% of revenue — win-back campaign
-- Retention (6 mo): ~20%
-
-**Solution:** VIP program for Champions, reactivation for At Risk/Lost.
+**Решение:** Триггерные кампании для high-risk сегмента.
 
 ---
 
-## 📌 Project 5: SQL Analytics
+## 📌 Проект 4: RFM-сегментация
 
-**Question:** Can we do RFM, cohorts, and funnel analysis in pure SQL?
+**Вопрос:** Кто самые ценные клиенты?
 
-*144K rows → Normalized SQLite DB (3NF) → 12 analytical queries*
+*Реальные данные: 144 541 транзакция, 2 708 клиентов, 6 месяцев*
 
-![SQL Dashboard](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/05-sql-analytics/dashboard_sql.png)
+![Дашборд RFM](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/04-retail-rfm-analysis/dashboard_preview.png)
 
-**What was built:**
-- **ETL**: CSV → 5 normalized tables (countries, customers, products, orders, order_items)
-- **RFM Segmentation** using `NTILE(5)` + `CASE`
-- **Cohort Analysis** with retention rates via window functions
-- **Moving Average** (`ROWS BETWEEN 2 PRECEDING AND CURRENT ROW`)
-- **MoM Growth** with `LAG()` for month-over-month deltas
-- **Rankings** (`RANK`, `DENSE_RANK`, `ROW_NUMBER`) within countries
+**Ключевые метрики:**
+- Champions (9.8%) = 32% выручки
+- At Risk (9.8%) = 15% выручки — нужна реактивация
+- Lost (40%) = 19% выручки — win-back кампания
+- Retention (6 мес): ~20%
 
-**Key Insight:** 25.9% Champions + 25.4% Lost = clear action matrix.
-
-**Tech:** SQLite, CTEs, window functions, JOINs, subqueries
+**Решение:** VIP-программа для Champions, реактивация At Risk/Lost.
 
 ---
 
-## 📌 Project 6: ETL Pipeline
+## 📌 Проект 5: SQL-аналитика
 
-**Question:** Can we automate the full flow from CSV to report?
+**Вопрос:** Можно ли сделать RFM, когорты и воронку на чистом SQL?
 
-**Pipeline:**
+*144K строк → Нормализованная SQLite БД (3NF) → 12 аналитических запросов*
+
+![Дашборд SQL](https://raw.githubusercontent.com/jacklivebot-web/data-analyst-portfolio/master/05-sql-analytics/dashboard_sql.png)
+
+**Что сделано:**
+- **ETL**: CSV → 5 нормализованных таблиц (countries, customers, products, orders, order_items)
+- **RFM-сегментация** через `NTILE(5)` + `CASE`
+- **Когортный анализ** с retention через оконные функции
+- **Скользящее среднее** (`ROWS BETWEEN 2 PRECEDING AND CURRENT ROW`)
+- **MoM-рост** через `LAG()` для месяц-к-месяцу
+- **Ранжирование** (`RANK`, `DENSE_RANK`, `ROW_NUMBER`) внутри стран
+
+**Ключевой инсайт:** 25.9% Champions + 25.4% Lost = понятная матрица действий.
+
+**Стек:** SQLite, CTE, оконные функции, JOIN, подзапросы
+
+---
+
+## 📌 Проект 6: ETL-пайплайн
+
+**Вопрос:** Можно ли автоматизировать весь путь от CSV до отчёта?
+
+**Пайплайн:**
 ```
-CSV Input → SQLite (3NF) → SQL Analytics Mart → PNG Dashboard → PDF Report
+CSV → SQLite (3NF) → SQL-витрина → PNG-дашборд → PDF-отчёт
 ```
 
-**Features:**
-- Automatic schema detection (Retail vs Generic)
-- Batch loading (5000 rows/batch for performance)
-- Data validation + normalization
-- One-command execution: `python pipeline.py --input data.csv`
+**Возможности:**
+- Автоопределение схемы (Retail / Generic)
+- Batch-загрузка (5000 строк/бATCH для скорости)
+- Валидация + нормализация
+- Одна команда: `python pipeline.py --input data.csv`
 
-**Tech:** Python, SQLite, reportlab, matplotlib
-
----
-
-## 📌 Project 7: Advanced SQL
-
-**Question:** What can advanced window functions reveal?
-
-**8 Advanced Queries:**
-1. **NTILE(4)** — quartile-based customer segmentation
-2. **LAG + LEAD** — per-customer order dynamics
-3. **ROWS BETWEEN** — cumulative revenue + centered moving average
-4. **RANK vs DENSE_RANK vs ROW_NUMBER** — ranking comparison
-5. **CUME_DIST + PERCENT_RANK** — percentile positioning
-6. **FIRST_VALUE / LAST_VALUE** — top/bottom customer per country
-7. **RF × F Matrix** — combined Recency-Frequency segmentation
-8. **MoM + YoY** — multi-period growth analysis
-
-**Key Insight:** R4F4 segment (fresh + frequent) = VIPs. R1F1 = Sleeping.
-
-**Tech:** SQLite, advanced window functions
+**Стек:** Python, SQLite, reportlab, matplotlib
 
 ---
 
-## 🛠️ Tech Stack
+## 📌 Проект 7: Продвинутый SQL
 
-| Category | Tools |
-|----------|-------|
-| **Data** | SQL (SQLite, PostgreSQL), pandas, numpy |
-| **Analytics** | Statistics, A/B testing, RFM, cohort analysis, ML |
-| **Visualization** | matplotlib, seaborn, Plotly, HTML dashboards |
-| **Automation** | Python scripts, ETL pipelines, report generation |
-| **Environment** | Git, GitHub, uv, Jupyter, Linux |
+**Вопрос:** Что покажут продвинутые оконные функции?
+
+**8 продвинутых запросов:**
+1. **NTILE(4)** — квартильная сегментация клиентов
+2. **LAG + LEAD** — динамика заказов внутри клиента
+3. **ROWS BETWEEN** — кумулятивная выручка + скользящее среднее
+4. **RANK vs DENSE_RANK vs ROW_NUMBER** — сравнение ранжирований
+5. **CUME_DIST + PERCENT_RANK** — процентильное позиционирование
+6. **FIRST_VALUE / LAST_VALUE** — лучший/худший клиент в стране
+7. **Матрица R × F** — комбинированная сегментация Recency-Frequency
+8. **MoM + YoY** — много-периодный анализ роста
+
+**Ключевой инсайт:** R4F4 = 🔥 VIP (свежие + частые). R1F1 = 💤 Спящие.
+
+**Стек:** SQLite, продвинутые оконные функции
 
 ---
 
-## 📁 Repository Structure
+## 🛠️ Технологический стек
+
+| Категория | Инструменты |
+|-----------|-------------|
+| **Данные** | SQL (SQLite, PostgreSQL), pandas, numpy |
+| **Аналитика** | Статистика, A/B-тесты, RFM, когортный анализ, ML |
+| **Визуализация** | matplotlib, seaborn, Plotly, HTML-дашборды |
+| **Автоматизация** | Python-скрипты, ETL-пайплайны, генерация отчётов |
+| **Инфраструктура** | Git, GitHub, uv, Jupyter, Linux |
+
+---
+
+## 📁 Структура репозитория
 
 ```
 data-analyst-portfolio/
-├── README.md                          ← This file
-├── auto_report.py                     🤖 CSV → Dashboard + PDF (automated)
-├── dashboards.py                        # Interactive HTML dashboard generator
+├── README.md                          ← Вы здесь
+├── auto_report.py                     🤖 CSV → Дашборд + PDF (авто)
+├── dashboards.py                        # Генератор интерактивных HTML
 │
 ├── 01-ecommerce-funnel/
-│   ├── dashboard.html                   🎯 Interactive funnel + channels
-│   ├── dashboard_preview.png            📊 Static preview
-│   ├── 01_ecommerce_funnel.ipynb        📓 Jupyter notebook
-│   └── analyze_funnel.py              🔧 Python analysis script
+│   ├── dashboard.html                   🎯 Интерактивная воронка
+│   ├── dashboard_preview.png            📊 Статичный превью
+│   ├── 01_ecommerce_funnel.ipynb        📓 Jupyter ноутбук
+│   └── analyze_funnel.py              🔧 Python-скрипт
 │
 ├── 02-ab-test-analysis/
-│   ├── dashboard.html                   🧪 Statistical significance dashboard
-│   ├── dashboard_preview.png            📊 Static preview
-│   ├── 02_ab_test.ipynb               📓 Jupyter notebook
-│   └── analyze_ab.py                  🔧 Python analysis script
+│   ├── dashboard.html                   🧪 Дашборд стат. значимости
+│   ├── dashboard_preview.png            📊 Статичный превью
+│   ├── 02_ab_test.ipynb               📓 Jupyter ноутбук
+│   └── analyze_ab.py                  🔧 Python-скрипт
 │
 ├── 03-churn-prediction/
-│   ├── dashboard.html                   🔄 Risk score + segments
-│   ├── dashboard_preview.png            📊 Static preview
-│   ├── 03_churn_prediction.ipynb      📓 Jupyter notebook
-│   └── analyze_churn.py               🔧 Python analysis script
+│   ├── dashboard.html                   🔄 Risk Score + сегменты
+│   ├── dashboard_preview.png            📊 Статичный превью
+│   ├── 03_churn_prediction.ipynb      📓 Jupyter ноутбук
+│   └── analyze_churn.py               🔧 Python-скрипт
 │
 ├── 04-retail-rfm-analysis/
-│   ├── dashboard.html                   🛍️ RFM + geography + dynamics
-│   ├── dashboard_preview.png            📊 Static preview
-│   ├── online_retail.csv              💾 Real data (144K rows)
-│   ├── 04_retail_rfm.ipynb            📓 Jupyter notebook
-│   └── analyze_retail.py              🔧 Python analysis script
+│   ├── dashboard.html                   🛍️ RFM + география + динамика
+│   ├── dashboard_preview.png            📊 Статичный превью
+│   ├── online_retail.csv              💾 Реальные данные (144K строк)
+│   ├── 04_retail_rfm.ipynb            📓 Jupyter ноутбук
+│   └── analyze_retail.py              🔧 Python-скрипт
 │
 ├── 05-sql-analytics/
-│   ├── etl.py                           🗄️ CSV → SQLite (3NF normalization)
-│   ├── sql_analytics.py               📊 12 SQL queries with comments
-│   ├── retail_analytics.db            💾 SQLite database
-│   └── dashboard_sql.png              📈 SQL results visualization
+│   ├── etl.py                           🗄️ CSV → SQLite (3NF)
+│   ├── sql_analytics.py               📊 12 SQL-запросов с комментариями
+│   ├── retail_analytics.db            💾 База данных SQLite
+│   └── dashboard_sql.png              📈 Визуализация SQL-результатов
 │
 ├── 06-etl-pipeline/
-│   ├── etl_pipeline.py                  🤖 Full pipeline CSV → PDF
-│   └── pipeline.py                      ⚡ Modular wrapper
+│   ├── etl_pipeline.py                  🤖 Полный пайплайн CSV → PDF
+│   └── pipeline.py                      ⚡ Модульная обёртка
 │
 └── 07-advanced-sql/
-    ├── advanced_sql.py                  ⚡ 8 advanced window function queries
-    └── README.md                        # Documentation
+    ├── advanced_sql.py                  ⚡ 8 запросов с оконными функциями
+    └── README.md                        # Документация
 ```
 
 ---
 
-## 📄 PDF Reports
+## 📄 PDF-отчёты
 
-Two ready-to-use PDF presentations are included:
+Два готовых презентационных PDF:
 
-| Report | Pages | Purpose |
-|--------|-------|---------|
-| `Data_Analyst_Portfolio_Report.pdf` | 8 | Portfolio presentation with all dashboards |
-| `Executive_Summary_Report.pdf` | 7 | Business report for stakeholders (metrics + ROI) |
+| Отчёт | Страниц | Назначение |
+|-------|---------|------------|
+| `Data_Analyst_Portfolio_Report.pdf` | 8 | Презентация портфолио со всеми дашбордами |
+| `Executive_Summary_Report.pdf` | 7 | Бизнес-отчёт для руководства (метрики + ROI) |
 
 ---
 
-## ⚡ Automation
+## ⚡ Автоматизация
 
-**Auto-Report Generator:**
+**Генератор автоотчётов:**
 ```bash
-# Funnel analysis
+# Воронка e-commerce
 python auto_report.py --input funnel.csv --type funnel --output-dir reports/
 
-# A/B test report
+# A/B-тест
 python auto_report.py --input ab_test.csv --type ab_test --output-dir reports/
 
-# Churn prediction
+# Прогноз оттока
 python auto_report.py --input customers.csv --type churn --output-dir reports/
 
-# RFM segmentation
+# RFM-сегментация
 python auto_report.py --input retail.csv --type rfm --output-dir reports/
 ```
 
-**Output:** `dashboard_TYPE.png` + `dashboard_TYPE.html` + `auto_report_TYPE.pdf`
+**Результат:** `dashboard_TYPE.png` + `dashboard_TYPE.html` + `auto_report_TYPE.pdf`
 
 ---
 
-## 🎯 Business Questions Answered
+## 🎯 Бизнес-вопросы и ответы
 
-1. **Where do we lose customers?** → Funnel analysis with device/channel breakdown
-2. **Which variant wins?** → Statistical A/B test with confidence intervals
-3. **Who will churn?** → ML model with 87% accuracy + risk scoring
-4. **Who brings the money?** → RFM segmentation with VIP identification
-5. **Can SQL handle it all?** → 20+ queries proving analytical SQL power
-6. **Can it be automated?** → One-command ETL pipeline
-7. **What do window functions show?** → Advanced segmentation matrices
+1. **Где теряем клиентов?** → Воронка с разбивкой по устройствам/каналам
+2. **Какой вариант лучше?** → Статистический A/B-тест с доверительными интервалами
+3. **Кто уйдёт?** → ML-модель с 87% точностью + скоринг риска
+4. **Кто приносит деньги?** → RFM-сегментация с выделением VIP
+5. **Может ли SQL всё это?** → 20+ запросов, доказывающих аналитическую мощь SQL
+6. **Можно ли автоматизировать?** → ETL-пайплайн в одну команду
+7. **Что покажут оконные функции?** → Продвинутые матрицы сегментации
 
 ---
 
-**License:** MIT  
-**Last Updated:** 2026-06-01
+**Лицензия:** MIT  
+**Обновлено:** 2026-06-01
