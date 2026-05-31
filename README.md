@@ -15,6 +15,9 @@
 | 2 | **A/B Test** | [`dashboard.html`](./02-ab-test-analysis/dashboard.html) | Какой вариант лучше? | ✅ Готово |
 | 3 | **Churn Prediction** | [`dashboard.html`](./03-churn-prediction/dashboard.html) | Кто уйдёт? Как спасти? | ✅ Готово |
 | 4 | **Retail RFM** | [`dashboard.html`](./04-retail-rfm-analysis/dashboard.html) | Кто самые ценные клиенты? | ✅ Готово |
+| 5 | **SQL Analytics** | [`dashboard_sql.png`](./05-sql-analytics/dashboard_sql.png) | ETL + 12 SQL-запросов | ✅ Готово |
+| 6 | **ETL Pipeline** | — | CSV → SQLite → PDF (авто) | ✅ Готово |
+| 7 | **Advanced SQL** | — | Оконные функции + сегментация | ✅ Готово |
 
 ---
 
@@ -161,15 +164,30 @@ data-analyst-portfolio/
 │   ├── 03_churn_prediction.ipynb
 │   └── analyze_churn.py
 │
-└── 04-retail-rfm-analysis/
-    ├── dashboard.html                   🛍️ RFM + география + динамика
-    ├── 04_retail_rfm.ipynb
-    ├── online_retail.csv              ← Реальные данные 144K
-    └── analyze_retail.py
+├── 04-retail-rfm-analysis/
+│   ├── dashboard.html                   🛍️ RFM + география + динамика
+│   ├── 04_retail_rfm.ipynb
+│   ├── online_retail.csv              ← Реальные данные 144K
+│   └── analyze_retail.py
+│
+├── 05-sql-analytics/
+│   ├── etl.py                           🗄️ CSV → SQLite (3NF)
+│   ├── sql_analytics.py                 📊 12 SQL-запросов с комментариями
+│   ├── retail_analytics.db              💾 База данных
+│   └── dashboard_sql.png                📈 Визуализация результатов
+│
+├── 06-etl-pipeline/
+│   ├── etl_pipeline.py                  🤖 Полный пайплайн CSV → PDF
+│   └── pipeline.py                      ⚡ Обёртка (модульная архитектура)
+│
+└── 07-advanced-sql/
+    ├── advanced_sql.py                  ⚡ 8 оконных функций (NTILE, LAG, etc)
+    └── README.md                        # Документация
 ```
 
 ---
 
 **Автор:** Евгений К. + Jack (Hermes Agent)  
-**Дата:** 2026-05-31  
-**Лицензия:** MIT
+**Дата:** 2026-06-01  
+**Лицензия:** MIT  
+**Версия:** 2.0 (7 проектов)
